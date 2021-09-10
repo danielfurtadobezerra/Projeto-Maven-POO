@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Login</title>
+<h:outputStylesheet library="css" name="file.css"/>
+</h:head>
+<h:body>
+
+	<header>
+		<h:graphicImage library="imagens" name="logoHM.png"/>
+	</header>
+	
+	<h1>Login</h1>
+	
+	<p:messages autoUpdate="true" id="msg"/>
+	
+	<h:form id="form">
+		<p:panel header="Cadastro de Clientes">
+			<h:panelGrid>
+				<p:messages autoUpdate="true" id="msg" />
+				<p:outputLabel value="Nome:" for="nome" />
+				<p:inputText id="nome" required="true"
+					requiredMessage="O nome é obrigatório"
+					placeholder="Digite seu nome aqui"
+					title="O mouse está sobre o componente" disabled="false"
+					value="#{bean.pessoa.nome}" />
+					
+				<p:outputLabel value="CPF: " />
+				<p:inputMask id="cpf" value="#{bean.pessoa.cpf}" mask="999.999.999-99" required="true"
+					requiredMessage="O CPF é obrigatório" placeholder="Digite seu CPF aqui"  />
+					
+				
+				<p:outputLabel value="Senha" for="senha" />
+				<p:password id="senha" feedback="true" weakLabel="Muito fraca" goodLabel="Senha razoável" 
+				stronLabel="Senha forte" inline="true" placeholder="Digite sua senha aqui"/>
+				
+				<p:commandButton value="Entrar" update="form" actionListener="#{bean.login}" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+
+</h:body>
+</html>

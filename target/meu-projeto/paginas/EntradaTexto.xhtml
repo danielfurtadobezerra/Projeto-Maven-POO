@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Entrada de Texto</title>
+<h:outputStylesheet library="css" name="file.css"/>
+</h:head>
+<h:body>
+
+	<header>
+		<h:graphicImage library="imagens" name="logoHM.png"/>
+	</header>
+	
+	<h1>Campos de entrada de texto</h1>
+	
+	<p:messages autoUpdate="true" id="msg"/>
+	
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nome" for="nome"/>
+			
+			<p:inputText id="nome" required="true" requiredMessage="O nome é obrigatório" 
+			placeholder="Digite o nome aqui" title="O mouse está sobre o componente"
+			disabled="false" value="#{bean.pessoa.nome}"/>
+		</p:panelGrid>
+
+</h:body>
+</html>

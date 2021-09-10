@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+body{
+	font-size: 12px;
+	font-family: "helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 20px;
+}
+
+h1{
+	font-size: 20px;
+	font-weight: 450;
+	color: #3d4b64 !important;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cadastro</title>
+	<h:outputStylesheet library="css" name="file.css"/>
+</h:head>
+<h:body>
+
+	<header>
+		<h:graphicImage library="imagens" name="logoHM.png"/>
+	</header>
+	
+<!-- 	<h1>Cadastro de Clientes</h1> -->
+	<h:form id="form">
+		<p:panel header="Cadastro de Clientes">
+			<h:panelGrid>
+			
+		<p:messages autoUpdate="true" id="msg"/>
+			
+				<p:outputLabel value="Nome:" for="nome"/>
+				<p:inputText value="#{bean.pessoa.nome}" required="true" id="nome" requiredMessage="O nome é obrigatório!" placeholder="Digite o nome aqui"/>
+				<p:outputLabel value="E-mail: "/> 	
+				<p:inputText value="#{bean.pessoa.email}" placeholder="Digite o e-mail aqui"/>
+				<p:outputLabel /> 	
+				<p:commandButton value="Adicionar" action="#{bean.adicionar}" update="form tabelaPessoa"/>		
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+
+	<h1>Lista de pessoas</h1>
+	<p:dataTable value="#{bean.pessoas}" var="p" border="1" id="tabelaPessoa">
+		<p:column headerText="Nome">#{p.nome}</p:column>
+		<p:column headerText="E-mail">#{p.email}</p:column>
+		<p:column headerText="Editar" width="70">
+			<p:button value="Editar" outcome="./paginas/Editando.xhtml" />
+		</p:column>
+	</p:dataTable>
+
+</h:body>
+</html>

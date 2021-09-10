@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Editando</title>
+	<h:outputStylesheet library="css" name="file.css"/>
+</h:head>
+<h:body>
+
+	<header>
+		<h:graphicImage library="imagens" name="logoHM.png"/>
+	</header>
+
+	<h1>Editando clientes</h1>
+	
+	<f:metadata>
+		<f:viewParam name="parametro" value="#{bean.pessoa.nome}"/>
+	</f:metadata>
+	
+	<h:outputLabel value="#{bean.pessoa.nome}"/>
+
+</h:body>
+</html>
